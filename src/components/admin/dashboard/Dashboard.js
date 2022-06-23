@@ -31,10 +31,11 @@ const Home = () => {
   const [plans, setPlans] = useState("");
   useEffect(() => {
     let selection = {};
+    const production_api = process.env.PRODUCTION_API;
     const dzongkahgboundaryvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `http://localhost:5000/api/dzongkhag-boundary/{z}/{x}/{y}.pbf`,
+        url: `${production_api}/api/dzongkhag-boundary/{z}/{x}/{y}.pbf`,
       }),
       style: function simpleStyle(feature) {
         if (feature.get("layers") === "dzongkhag_boundaries") {

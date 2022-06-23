@@ -66,12 +66,12 @@ const Home = () => {
   }
 
   useEffect(() => {
-
+    const production_api = process.env.PRODUCTION_API;
     let selection = {};
     const planboundaryvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `http://localhost:5000/api/plan-boundary/{z}/{x}/{y}.pbf`,
+        url: `${production_api}/api/plan-boundary/{z}/{x}/{y}.pbf`,
         tileSize: 3072
 
       }),
@@ -115,7 +115,7 @@ const Home = () => {
     const plotvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `http://localhost:5000/api/plots/{z}/{x}/{y}.pbf`,
+        url: `${production_api}/api/plots/{z}/{x}/{y}.pbf`,
         tileSize: 3072,
 
       }),
@@ -181,7 +181,7 @@ const Home = () => {
     const roadvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `http://localhost:5000/api/roads/{z}/{x}/{y}.pbf`,
+        url: `${production_api}/api/roads/{z}/{x}/{y}.pbf`,
         tileSize: 3072,
 
       }),
