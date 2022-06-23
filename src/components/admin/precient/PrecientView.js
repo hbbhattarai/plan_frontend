@@ -53,8 +53,8 @@ const Dashboard = () => {
     function closeViewPlanModal() {
         setViewPlanIsOpen(false);
     }
+    const production_api = process.env.PRODUCTION_API;
     useEffect(() => {
-        const production_api = process.env.PRODUCTION_API;
         let selection = {};
         const planboundaryvectorLayer = new VectorTileLayer({
             source: new VectorTileSource({

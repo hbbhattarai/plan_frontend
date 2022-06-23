@@ -17,7 +17,7 @@ import { CanvasJSChart } from "canvasjs-react-charts";
 import LogoImage from "../../../assets/logo.png";
 import planService from "../../../services/plan/plan.service";
 
-
+const production_api = process.env.PRODUCTION_API;
 
 const Home = () => {
   const mapRef = useRef("");
@@ -31,7 +31,6 @@ const Home = () => {
   const [plans, setPlans] = useState("");
   useEffect(() => {
     let selection = {};
-    const production_api = process.env.PRODUCTION_API;
     const dzongkahgboundaryvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),

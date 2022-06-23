@@ -64,11 +64,10 @@ const Home = () => {
   function closeViewPlanModal() {
     setViewPlanIsOpen(false);
   }
-
+  const production_api = process.env.PRODUCTION_API;
   useEffect(() => {
 
     let selection = {};
-    const production_api = process.env.PRODUCTION_API;
     const planboundaryvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),

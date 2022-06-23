@@ -31,6 +31,8 @@ const customStyles = {
     },
 };
 
+const production_api = process.env.PRODUCTION_API;
+
 const Dashboard = () => {
     // Plan Details
     const [plan, SetPlans] = useState("");
@@ -55,7 +57,7 @@ const Dashboard = () => {
     }
     useEffect(() => {
         let selection = {};
-        const production_api = process.env.PRODUCTION_API;
+       
         const planboundaryvectorLayer = new VectorTileLayer({
             source: new VectorTileSource({
                 format: new MVT(),
