@@ -293,9 +293,9 @@ const Dashboard = () => {
 
     return (
         <div className="flex font-serif flex-col md:h-screen overflow-hidden">
-            <div class="bg-gray-200 w-full flex justify-center">
-                <a href={`/dashboard/precinet/${plan.id}`} class="flex flex-col items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-                    <span class="font-bold  text-2xl">{plan.plan_name}</span>
+            <div className="bg-gray-200 w-full flex justify-center">
+                <a href={`/dashboard/precinet/${plan.id}`} className="flex flex-col items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+                    <span className="font-bold  text-2xl">{plan.plan_name}</span>
                 </a>
             </div>
 
@@ -315,7 +315,7 @@ const Dashboard = () => {
                             <div className="flex justify-around items-center">
                                 <div className="w-72 md:w-96 h-96">
 
-                                    <div class="md:m-3">
+                                    <div className="md:m-3">
                                         <h2 className="text-lg mb-2">Precinct DCR
                                             <span className="text-xs  text-red-800 font-serif  inline bg-gray-400 rounded-full px-2 py-1 float-right"><button onClick={closeViewPlanModal}>
                                                 X

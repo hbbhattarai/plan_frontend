@@ -341,44 +341,6 @@ const Home = () => {
         source: source,
       });
       map.addLayer(layer);
-      const locateButton = document.createElement('div');
-      locateButton.className = 'ol-control ol-unselectable relative top-20 p-2 crouser-pointer left-2';
-      locateButton.innerHTML = '<button>◎</button>';
-      locateButton.addEventListener('click', function () {
-        navigator.geolocation.watchPosition(
-          function (position) {
-            const coords = [position.coords.longitude, position.coords.latitude];
-            map.getView().setCenter(olProj.fromLonLat([position.coords.longitude, position.coords.latitude]))
-            map.getView().setZoom(18)
-            const accuracy = circular(coords, position.coords.accuracy);
-            source.clear(true);
-            const locationFeature = new Feature({ geometry: new Point(olProj.fromLonLat(coords)) });
-            locationFeature.setStyle(new Style({
-              image: new Icon({
-                color: "blue",
-                opacity: "0.5",
-                crossOrigin: "anonymous",
-                src: 'https://openlayers.org/en/v4.6.5/examples/data/dot.png'
-              })
-            }))
-            const accuracyFeature = new Feature(accuracy.transform('EPSG:4326', map.getView().getProjection()));
-            source.addFeature(accuracyFeature);
-            source.addFeature(locationFeature);
-          },
-          function (error) {
-            alert(`ERROR: ${error.message} `);
-          },
-          {
-            enableHighAccuracy: true,
-          }
-        );
-      });
-      map.addControl(
-        new Control({
-          element: locateButton
-        })
-      );
-
     }
   })
   const handlePlotId = (e) => {
@@ -562,7 +524,7 @@ const Home = () => {
 
             </div>
           </div>
-          <div class="w-full flex justify-center">
+          <div className="w-full flex justify-center">
             <div className="flex justify-center w-full my-2">
               <form onSubmit={submitPlotID} className="w-3/4 md:w-1/3 block relative">
                 <div className="flex flex-row">

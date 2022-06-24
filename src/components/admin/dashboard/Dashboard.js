@@ -239,41 +239,41 @@ const Home = () => {
       <div className="p-2 h-full w-full flex md:flex-row flex-col overflow-hidden">
         <div className="bg-white m-4 md:w-1/4  rounded-lg overflow-hidden">
           <div className="flex h-full flex-col ">
-            <div class="w-full flex mb-1 justify-center border-b-2 border-gray-500">
-              <a href="/dashboard" class="flex flex-col items-center text-gray-900 hover:text-gray-900">
+            <div className="w-full flex mb-1 justify-center border-b-2 border-gray-500">
+              <a href="/dashboard" className="flex flex-col items-center text-gray-900 hover:text-gray-900">
                 <img src={LogoImage} className="h-20 w-auto p-1" alt="DHS" />
-                <span class="font-bold text-center text-2xl"> DHS | Plan Inventory System </span>
+                <span className="font-bold text-center text-2xl"> DHS | Plan Inventory System </span>
               </a>
             </div>
           
             <div className="flex md:h-3/5 h-72 w-full overflow-y-auto">
-              <table class="min-w-full leading-normal">
+              <table className="min-w-full leading-normal">
                 {plans && (
                   <tbody className="flex flex-col justify-center items-center">
                     {plans.map((item, index) => {
                       return (
 
                         <tr key={index}
-                          class="border-t text-xs flex p-1 md:p-3 hover:bg-gray-100 md:table-row flex-col w-full flex-wrap">
+                          className="border-t text-xs flex p-1 md:p-3 hover:bg-gray-100 md:table-row flex-col w-full flex-wrap">
 
-                          <td class="flex flex-roww bg-white  w-full">
-                            <label class=" text-gray-500 Capitalize font-semibold mx-4 ">Plan Name : </label>
-                            <p class="text-gray-600 whitespace-no-wrap">  {item.plan_name}</p>
+                          <td className="flex flex-roww bg-white  w-full">
+                            <label className=" text-gray-500 Capitalize font-semibold mx-4 ">Plan Name : </label>
+                            <p className="text-gray-600 whitespace-no-wrap">  {item.plan_name}</p>
 
-
-                          </td>
-                          <td class="flex flex-roww bg-white  w-full">
-                            <label class="text-gray-500 Capitalize font-semibold mx-4 ">Areas in acres :</label>
-                            <p class="text-gray-900 whitespace-no-wrap"> {item.area}</p>
 
                           </td>
-                          <td class="flex flex-row bg-white w-full">
-                            <label class="text-gray-500 Capitalize font-semibold mx-4">Approved Date :</label>
-                            <p class="text-gray-900 whitespace-no-wrap"> {item.approved_date}</p>
+                          <td className="flex flex-roww bg-white  w-full">
+                            <label className="text-gray-500 Capitalize font-semibold mx-4 ">Areas in acres :</label>
+                            <p className="text-gray-900 whitespace-no-wrap"> {item.area}</p>
+
+                          </td>
+                          <td className="flex flex-row bg-white w-full">
+                            <label className="text-gray-500 Capitalize font-semibold mx-4">Approved Date :</label>
+                            <p className="text-gray-900 whitespace-no-wrap"> {item.approved_date}</p>
 
                           </td>
 
-                          <td class="flex justify-end bg-white  w-full">
+                          <td className="flex justify-end bg-white  w-full">
 
                             <a href={`/plan/${item.id}`} className="bg-gray-500 h-8 text-center opacity-80  text-white rounded-sm hover:bg-gray-100 hover:text-gray-800 px-2 py-1 flex items-center">View</a>
                           </td>

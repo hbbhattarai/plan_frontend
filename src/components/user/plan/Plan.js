@@ -1,19 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import planService from "../../../services/plan/plan.service";
 import precinctService from "../../../services/plan/precinct.service";
 import { CanvasJSChart } from "canvasjs-react-charts"
 import activityService from '../../../services/plan/activity.service';
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: 'auto',
-        transform: 'translate(-50%, -50%)',
-    },
-};
+
 
 
 const Dashboard = () => {
