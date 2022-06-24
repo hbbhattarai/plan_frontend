@@ -17,7 +17,7 @@ import { CanvasJSChart } from "canvasjs-react-charts";
 import LogoImage from "../../../assets/logo.png";
 import planService from "../../../services/plan/plan.service";
 
-const production_api = process.env.PRODUCTION_API;
+
 
 const Home = () => {
   const mapRef = useRef("");
@@ -34,7 +34,7 @@ const Home = () => {
     const dzongkahgboundaryvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `${production_api}/api/dzongkhag-boundary/{z}/{x}/{y}.pbf`,
+        url: `/api/dzongkhag-boundary/{z}/{x}/{y}.pbf`,
       }),
       style: function simpleStyle(feature) {
         if (feature.get("layers") === "dzongkhag_boundaries") {

@@ -71,7 +71,7 @@ const Home = () => {
     const planboundaryvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `${production_api}/api/plan-boundary/{z}/{x}/{y}.pbf`,
+        url: `/api/plan-boundary/{z}/{x}/{y}.pbf`,
         tileSize: 3072
 
       }),
@@ -115,7 +115,7 @@ const Home = () => {
     const plotvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `${production_api}/api/plots/{z}/{x}/{y}.pbf`,
+        url: `/api/plots/{z}/{x}/{y}.pbf`,
         tileSize: 3072,
 
       }),
@@ -181,7 +181,7 @@ const Home = () => {
     const roadvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `${production_api}/api/roads/{z}/{x}/{y}.pbf`,
+        url: `/api/roads/{z}/{x}/{y}.pbf`,
         tileSize: 3072,
 
       }),

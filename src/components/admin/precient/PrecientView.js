@@ -53,13 +53,13 @@ const Dashboard = () => {
     function closeViewPlanModal() {
         setViewPlanIsOpen(false);
     }
-    const production_api = process.env.PRODUCTION_API;
+
     useEffect(() => {
         let selection = {};
         const planboundaryvectorLayer = new VectorTileLayer({
             source: new VectorTileSource({
                 format: new MVT(),
-                url: `${production_api}/api/plan-boundary/{z}/{x}/{y}.pbf`,
+                url: `/api/plan-boundary/{z}/{x}/{y}.pbf`,
                 tileSize: 4096
 
             }),
@@ -104,7 +104,7 @@ const Dashboard = () => {
         const precintvectorLayer = new VectorTileLayer({
             source: new VectorTileSource({
                 format: new MVT(),
-                url: `${production_api}/api/precincts/{z}/{x}/{y}.pbf`,
+                url: `/api/precincts/{z}/{x}/{y}.pbf`,
                 tileSize: 1536
             }),
             style: function simpleStyle(feature) {
@@ -473,7 +473,7 @@ const Dashboard = () => {
                             <h4 className="font-semibold text-lg text-center mb-4"> Download and View</h4>
                             <div className="flex justify-around gap-6 items-center mb-4">
                                 <a
-                                    href={`${production_api}/api/${plan.data_url}`}
+                                    href={`/api/${plan.data_url}`}
                                     className="bg-gray-700  w-30 text-white rounded-lg hover:bg-gray-900 hover:text-white px-2 py-1 flex items-center"
                                 >
                                     <span>Data</span>
@@ -493,7 +493,7 @@ const Dashboard = () => {
                                     </div>
                                 </a>
                                 <a
-                                    href={`${production_api}/api/${plan.report_url}`}
+                                    href={`/api/${plan.report_url}`}
                                     className="bg-gray-700  duration-300 w-30 text-white rounded-lg hover:bg-gray-900 hover:text-white px-2 py-1 flex items-center"
                                 >
                                     <span>Report</span>
