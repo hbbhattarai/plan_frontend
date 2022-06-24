@@ -31,7 +31,7 @@ const customStyles = {
     },
 };
 
-
+const RECT_APP_API = process.env.REACT_APP_API
 
 const Dashboard = () => {
     // Plan Details
@@ -61,7 +61,7 @@ const Dashboard = () => {
         const planboundaryvectorLayer = new VectorTileLayer({
             source: new VectorTileSource({
                 format: new MVT(),
-                url: `/api/plan-boundary/{z}/{x}/{y}.pbf`,
+                url: `${RECT_APP_API}/api/plan-boundary/{z}/{x}/{y}.pbf`,
                 tileSize: 4096
 
             }),
@@ -106,7 +106,7 @@ const Dashboard = () => {
         const precintvectorLayer = new VectorTileLayer({
             source: new VectorTileSource({
                 format: new MVT(),
-                url: `/api/precincts/{z}/{x}/{y}.pbf`,
+                url: `${RECT_APP_API}/api/precincts/{z}/{x}/{y}.pbf`,
                 tileSize: 1536
             }),
             style: function simpleStyle(feature) {

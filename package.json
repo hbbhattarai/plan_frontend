@@ -1,8 +1,7 @@
 {
   "name": "dhs",
   "version": "0.1.0",
-  "private": true,
-  "proxy":"http://192.168.20.87:5000/",
+  "homepage":".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -10,6 +9,7 @@
     "axios": "^0.24.0",
     "canvasjs-react-charts": "^1.0.5",
     "dotenv": "^10.0.0",
+    "http-proxy-middleware": "^2.0.6",
     "ol": "^6.12.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -24,7 +24,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "set PORT=5001 && craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
@@ -47,4 +47,5 @@
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
   }
+
 }

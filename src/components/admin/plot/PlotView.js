@@ -64,13 +64,13 @@ const Home = () => {
   function closeViewPlanModal() {
     setViewPlanIsOpen(false);
   }
-  const production_api = process.env.PRODUCTION_API;
+  const RECT_APP_API = process.env.REACT_APP_API
   useEffect(() => {
     let selection = {};
     const planboundaryvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `/api/plan-boundary/{z}/{x}/{y}.pbf`,
+        url: `${RECT_APP_API}/api/plan-boundary/{z}/{x}/{y}.pbf`,
         tileSize: 3072
 
       }),
@@ -114,7 +114,7 @@ const Home = () => {
     const plotvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `/api/plots/{z}/{x}/{y}.pbf`,
+        url: `${RECT_APP_API}/api/plots/{z}/{x}/{y}.pbf`,
         tileSize: 3072,
 
       }),
@@ -180,7 +180,7 @@ const Home = () => {
     const roadvectorLayer = new VectorTileLayer({
       source: new VectorTileSource({
         format: new MVT(),
-        url: `/api/roads/{z}/{x}/{y}.pbf`,
+        url: `${RECT_APP_API}/api/roads/{z}/{x}/{y}.pbf`,
         tileSize: 3072,
 
       }),

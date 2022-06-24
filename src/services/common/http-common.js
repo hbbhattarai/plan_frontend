@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: process.env.PRODUCTION_API,
+  baseURL: process.env.REACT_APP_API,
   headers: {
     "Content-type": "application/json"
-  }
+  },
 });
